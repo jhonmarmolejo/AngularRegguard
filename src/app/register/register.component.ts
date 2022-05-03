@@ -28,8 +28,11 @@ export class RegisterComponent implements OnInit {
     const { username, email, password } = this.form;
 
     debugger;
-    const Imperium = require('src/app/scripts/registrationguard1.0.js');
-    Imperium.imperium.registrationGuard.analyze({
+    const Imperium = require('../../assets/registrationguard1.0.js');
+
+    const { imperium } = Imperium;
+
+    imperium.registrationGuard.analyze({
       clientID: "You need to put your CLIENTID here",
       language: 'EN',
       registrationFormID: "UniqueId",
