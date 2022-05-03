@@ -11,6 +11,7 @@
       (ngSubmit)="f.form.valid && onSubmit()"
       #f="ngForm"
       novalidate
+      data-registration="1"
     >
       <div class="form-group">
         <label for="username">Username</label>
@@ -44,6 +45,7 @@
           required
           email
           #email="ngModel"
+          data-email-check="1"
         />
         <div class="alert-danger" *ngIf="email.errors && f.submitted">
           <div *ngIf="email.errors.required">Email is required</div>
