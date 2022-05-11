@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 
+declare var imperium: any;
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -27,15 +29,10 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     const { username, email, password } = this.form;
 
-    debugger;
-    const Imperium = require('../../assets/registrationguard1.0.js');
-
-    const { imperium } = Imperium;
-
     imperium.registrationGuard.analyze({
-      clientID: "You need to put your CLIENTID here",
+      clientID: '4082C877-C7C1-11EC-A210-1264B5C78F33',
       language: 'EN',
-      registrationFormID: "UniqueId",
+      registrationFormID: 'MyUniqueFormId',
       callback: this.RegistrationComplete
     });
   }
